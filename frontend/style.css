@@ -1,0 +1,29 @@
+body{
+    overflow: hidden;
+}
+
+.main-section {
+    background-image: url(assets/bg2.png);
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: inherit;
+    text-align: center;
+}
+.main-content {
+    max-width: 700px;
+}
+.main-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-top: 40px;
+}
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 60px;
+    margin-top: 0;
+}
+p{
+    margin-bottom: 30px;
+}
