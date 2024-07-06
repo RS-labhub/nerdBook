@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@smarthtmlelements/smart-core": "^4.5.0"
+  }
+}
