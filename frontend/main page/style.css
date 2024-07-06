@@ -1,0 +1,13 @@
+body{
+    background-image: url(../assets/bg1.png);
+}
+
+.footer{
+    background-color: white;
+}
+
+hr{
+    border: none;
+    height: 0.1px;
+    background-color: #efeded;
+}
