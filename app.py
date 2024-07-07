@@ -1,24 +1,31 @@
-from flask import Flask, request, jsonify
 import mindsdb_sdk
+from dotenv import load_dotenv
+import pandas as pd
+from json import loads
 
-app = Flask(__name__)
+load_dotenv()
+
+server = mindsdb_sdk.connect()
+project = server.get_project("mindsdb")
+
+model = project.models.get("code_helper")
 
 
-mdb = mindsdb_sdk.connect()
+def generate(code):
+    df = pd.DataFrame(model.predict({"code": code}))
+    data = df["output"][0]
+    return data
 
-# Endpoint to handle MindsDB query
-@app.route('/get-debug-suggestions', methods=['POST'])
-def get_debug_suggestions():
-    try:
-        data = request.get_json()
-        code_snippet = data['code']
-        
-        mdb.learn(from_data='debug_suggestions.csv', to_predict='suggestion')
-        result = mdb.predict(predict='suggestion', when={'code_snippet': code_snippet})
 
-        return jsonify(result)
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+print(
+    generate(
+        """
+#include <iostream>
 
-if __name__ == '__main__':
-    app.run(debug=True)
+int main() {
+    std::cout << "Hello World!";
+    return 0;
+}
+    """
+    )
+)
