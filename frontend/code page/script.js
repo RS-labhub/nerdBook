@@ -49,11 +49,7 @@ document.getElementById("run-code").addEventListener("click", async (event) => {
 
     // Handle the debug suggestions from MindsDB result here
     const debugSuggestionsElement = document.getElementById('debug-suggestions');
-    if (result && result.data && result.data.length > 0) {
-      debugSuggestionsElement.textContent = result.data[0].suggestion;
-    } else {
-      debugSuggestionsElement.textContent = 'No debug suggestions available.';
-    }
+    debugSuggestionsElement.innerHTML = `<p><strong>Error:</strong> ${result.error_message}</p><p><strong>Suggestion:</strong> ${result.suggestion}</p>`;
   } catch (error) {
     console.error('Error running code:', error);
     outputElement.textContent = 'Error running code. Please try again later.';
