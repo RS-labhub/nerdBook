@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-c_cpp.js"></script>
 </head>
 
 <body>
@@ -41,39 +45,23 @@
     </header>
 
     <main class="container my-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="../assets/bookshop.svg" class="card-img-top" alt="Image 1">
-                    <div class="card-body">
-                        <h5 class="card-title">OpenAI Books Library</h5>
-                        <p class="card-text">This is a description for the first card. It provides some details about the content of the card.</p>
-                        <a href="#" class="btn btn-warning" onclick = "booksPage()">Search Books</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="../assets/learning.svg" class="card-img-top" alt="Image 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Learning Center</h5>
-                        <p class="card-text">This is a description for the second card. It provides some details about the content of the card.</p>
-                        <a href="#" class="btn btn-info" onclick = "learningPage()">Start Learning</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="../assets/programmer.svg" class="card-img-top" alt="Image 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Coding Hub</h5>
-                        <p class="card-text">This is a description for the third card. It provides some details about the content of the card.</p>
-                        <a href="#" class="btn btn-primary" onclick = "codePage()">Rock Coder's Colony</a>
-                    </div>
-                </div>
-            </div>
+        <h1 class="mb-4">C++ Code Platform</h1>
+        <div class="form-group">
+            <label for="theme-selector">Select Theme:</label>
+            <select id="theme-selector" class="form-control" style="width: 200px;">
+                <option value="ace/theme/monokai">Monokai</option>
+                <option value="ace/theme/github">GitHub</option>
+                <option value="ace/theme/idle_fingers">Idle Fingers</option>
+                <option value="ace/theme/solarized_dark">Solarized Dark</option>
+            </select>
         </div>
+        <div id="code-editor" class="editor"></div>
+        <button id="run-code" class="btn btn-primary mb-4">Run Code</button>
+        <div id="output" class="output"></div>
+        <h3>Debug Suggestions</h3>
+        <div id="debug-suggestions" class="debug-suggestions"></div>
     </main>
+    
     <br><br>
     
     <footer class="footer">

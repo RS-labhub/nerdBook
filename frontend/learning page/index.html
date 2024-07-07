@@ -41,39 +41,13 @@
     </header>
 
     <main class="container my-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="../assets/bookshop.svg" class="card-img-top" alt="Image 1">
-                    <div class="card-body">
-                        <h5 class="card-title">OpenAI Books Library</h5>
-                        <p class="card-text">This is a description for the first card. It provides some details about the content of the card.</p>
-                        <a href="#" class="btn btn-warning" onclick = "booksPage()">Search Books</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="../assets/learning.svg" class="card-img-top" alt="Image 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Learning Center</h5>
-                        <p class="card-text">This is a description for the second card. It provides some details about the content of the card.</p>
-                        <a href="#" class="btn btn-info" onclick = "learningPage()">Start Learning</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="../assets/programmer.svg" class="card-img-top" alt="Image 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Coding Hub</h5>
-                        <p class="card-text">This is a description for the third card. It provides some details about the content of the card.</p>
-                        <a href="#" class="btn btn-primary" onclick = "codePage()">Rock Coder's Colony</a>
-                    </div>
-                </div>
-            </div>
+        <h1 class="mb-4">AI Learning Platform</h1>
+        <div class="search-bar">
+            <input type="text" id="search-input" class="form-control" placeholder="🌐 Search for learning content...">
         </div>
+        <div id="content-container" class="row"></div>
     </main>
+    
     <br><br>
     
     <footer class="footer">
