@@ -9,16 +9,18 @@ editor.setOptions({
   tabSize: 4,
 });
 
-document.getElementById('theme-selector').addEventListener('change', function() {
-    const theme = this.value;
-    editor.setTheme(theme);
+document.getElementById('theme-selector').addEventListener('change', function () {
+  const theme = this.value;
+  editor.setTheme(theme);
 });
 
-document.getElementById("run-code").addEventListener("click", async () => {
+document.getElementById("run-code").addEventListener("click", async (event) => {
+  event.preventDefault();
+  // event.stopImmediatePropagation();
   const code = editor.getValue();
   const outputElement = document.getElementById("output");
   const debugSuggestionsElement = document.getElementById("debug-suggestions");
-  
+
   // Clear previous output and suggestions
   outputElement.textContent = '';
   debugSuggestionsElement.textContent = '';
@@ -31,35 +33,30 @@ document.getElementById("run-code").addEventListener("click", async () => {
 
   // Send code to server for compilation and execution
   outputElement.textContent = 'Running...';
-  const response = await fetch("http://localhost:3000/run-code", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ code }),
-  });
+  try {
+    const response = await fetch('http://localhost:3000/run-code', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ code })
+    });
 
-  const result = await response.json();
-  outputElement.textContent = result.output;
+    const result = await response.json();
+    outputElement.textContent = result.output || "No output returned.";
 
-  // Fetch debug suggestions from MindsDB
-  const suggestionsResponse = await fetch("https://api.mindsdb.com/sql/query", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer YOUR_MINDSDB_API_KEY", // Replace with your MindsDB API key
-    },
-    body: JSON.stringify({
-      query: `SELECT suggestion FROM debug_suggestions WHERE error_message='${result.error}'`,
-    }),
-  });
+    console.log('MindsDB Result:', result);
 
-  const suggestionsData = await suggestionsResponse.json();
-  if (suggestionsData.data.length > 0) {
-    debugSuggestionsElement.textContent = suggestionsData.data
-      .map((s) => s.suggestion)
-      .join("\n");
-  } else {
-    debugSuggestionsElement.textContent = "No suggestions found.";
+    // Handle the debug suggestions from MindsDB result here
+    const debugSuggestionsElement = document.getElementById('debug-suggestions');
+    if (result && result.data && result.data.length > 0) {
+      debugSuggestionsElement.textContent = result.data[0].suggestion;
+    } else {
+      debugSuggestionsElement.textContent = 'No debug suggestions available.';
+    }
+  } catch (error) {
+    console.error('Error running code:', error);
+    outputElement.textContent = 'Error running code. Please try again later.';
   }
+  return false;
 });
