@@ -1,44 +1,45 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the C++ Code Platform API');
+});
 
 app.post('/run-code', (req, res) => {
     const { code } = req.body;
 
-    // Save code to a temporary file
-    const filePath = path.join(__dirname, 'tempCode.cpp');
-    const outputPath = path.join(__dirname, 'tempCode.out');
+    if (!code) {
+        res.json({ output: "can't find code", error: "" });
+        return;
+    }
+
+    const filePath = path.join(__dirname, 'code.cpp');
+    const executablePath = path.join(__dirname, 'code');
+
     fs.writeFileSync(filePath, code);
 
-    exec(`g++ ${filePath} -o ${outputPath} && ${outputPath}`, (error, stdout, stderr) => {
-        let output = stdout;
-        let errorMessage = '';
+    const command = `g++ ${filePath} -o ${executablePath} && ${executablePath}`;
 
+    exec(command, (error, stdout, stderr) => {
         if (error) {
-            output = stderr;
-            errorMessage = error.message;
+            console.error(`Compilation or execution error: ${error}`);
+            res.json({ output: stderr, error: error.message });
+            return;
         }
-
-        // Send back the output and error message
-        res.json({
-            output,
-            error: errorMessage
-        });
-
-        // Clean up temporary files
-        fs.unlinkSync(filePath);
-        if (fs.existsSync(outputPath)) {
-            fs.unlinkSync(outputPath);
-        }
+        res.json({ output: stdout, error: stderr });
     });
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
