@@ -18,7 +18,7 @@ app.post('/ask', async (req, res) => {
             query: `SELECT output FROM coding_chat_helper WHERE question = '${question}'`
         }, {
             headers: {
-                'Authorization': 'Bearer bf398ab693f5e13e6f35e11d34ae2216fed5f27ff450a0a14d88f3ce6e0ecbc5',
+                'Authorization': 'Bearer API_KEY',
                 'Content-Type': 'application/json'
             }
         });
