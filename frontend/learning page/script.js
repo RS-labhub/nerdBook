@@ -1,50 +1,27 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    const searchBar = document.getElementById('search-bar');
-    const booksContainer = document.getElementById('content-container');
+async function askQuestion() {
+    const question = document.getElementById('search-input').value;
+    const responseContainer = document.getElementById('content-container');
 
-    searchBar.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            const query = searchBar.value.trim();
-            fetchBooks(query);
-        }
-    });
-
-    async function getCodingResponse() {
-        const query = document.getElementById('search-input').value;
-
-        const response = await fetch('http://localhost:47334/api/sql/query', {
+    try {
+        const response = await fetch('/ask', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer API_KEY'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                "query": `SELECT explanation, key_points, code_examples, conclusion FROM coding_gpt WHERE query = '${query}'`
-            })
+            body: JSON.stringify({ question })
         });
 
         const data = await response.json();
-        displayResponse(data);
-    }
 
-    function displayResponse(data) {
-        const container = document.getElementById('content-container');
-        const response = data[0].query_response;
-
-        container.innerHTML = `
+        responseContainer.innerHTML = `
             <div class="col-12">
-                <h2>Explanation</h2>
-                <p>${response.explanation}</p>
-                <h2>Key Points</h2>
-                <ul>
-                    ${response.key_points.split(',').map(point => `<li>${point}</li>`).join('')}
-                </ul>
-                <h2>Code Examples</h2>
-                <pre>${response.code_examples}</pre>
-                <h2>Conclusion</h2>
-                <p>${response.conclusion}</p>
+                <h3>Question: ${data.question}</h3>
+                <p>${data.answer}</p>
+                <pre><code>${data.example_code}</code></pre>
             </div>
         `;
+    } catch (error) {
+        console.error('Error:', error);
+        responseContainer.innerHTML = `<div class="col-12"><p>Error fetching the answer.</p></div>`;
     }
-})
+}
