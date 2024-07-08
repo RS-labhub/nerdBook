@@ -12,7 +12,7 @@
         "books"
       ],
       "description": "by Richard L. Halterman",
-      "image_url": "/images/fundamentals.png",
+      "image_url": "http://localhost:5000/images/fundamentals.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/progcpp.pdf"
     },
     {
@@ -25,8 +25,8 @@
         "book",
         "books"
       ],
-      "description": "Frank B. Brokken",
-      "image_url": "/images/cpp_anno.png",
+      "description": "by Frank B. Brokken",
+      "image_url": "http://localhost:5000/images/cpp_anno.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/cplusplus.pdf"
     },
     {
@@ -39,8 +39,8 @@
         "book",
         "books"
       ],
-      "description": "Agner Fog",
-      "image_url": "/images/optimizing.png",
+      "description": "by Agner Fog",
+      "image_url": "http://localhost:5000/images/optimizing.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/optimizing_cpp.pdf"
     },
     {
@@ -53,8 +53,8 @@
         "book",
         "books"
       ],
-      "description": "Eric S. Roberts",
-      "image_url": "/images/abstractions.png",
+      "description": "by Eric S. Roberts",
+      "image_url": "http://localhost:5000/images/abstractions.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/Prog-in-Cpp.pdf"
     },
     {
@@ -67,8 +67,8 @@
         "book",
         "books"
       ],
-      "description": "Clifford A. Shaffer",
-      "image_url": "/images/dsa.png",
+      "description": "by Clifford A. Shaffer",
+      "image_url": "http://localhost:5000/images/dsa.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/C-3e20120102.pdf"
     },
     {
@@ -81,8 +81,8 @@
         "book",
         "books"
       ],
-      "description": "Kjell Bäckman",
-      "image_url": "/images/structured.png",
+      "description": "by Kjell Bäckman",
+      "image_url": "http://localhost:5000/images/structured.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/structured-programming-with-c-plus-plus.pdf"
     },
     {
@@ -95,8 +95,8 @@
         "book",
         "books"
       ],
-      "description": "Boris Schaling",
-      "image_url": "/images/boost.png",
+      "description": "by Boris Schaling",
+      "image_url": "http://localhost:5000/images/boost.png",
       "pdf_url": "https://theboostcpplibraries.com/"
     },
     {
@@ -109,8 +109,8 @@
         "book",
         "books"
       ],
-      "description": "Jeremy A. Hansen",
-      "image_url": "/images/rook_guide.png",
+      "description": "by Jeremy A. Hansen",
+      "image_url": "http://localhost:5000/images/rook_guide.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/rooks-guide-isbn-version.pdf"
     },
     {
@@ -123,8 +123,8 @@
         "book",
         "books"
       ],
-      "description": "Samy Pesse",
-      "image_url": "/images/os_scratch.png",
+      "description": "by Samy Pesse",
+      "image_url": "http://localhost:5000/images/os_scratch.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/how-to-create-an-operating-system.pdf"
     },
     {
@@ -137,8 +137,8 @@
         "book",
         "books"
       ],
-      "description": "JT Kalnay",
-      "image_url": "/images/cppforc.png",
+      "description": "by JT Kalnay",
+      "image_url": "http://localhost:5000/images/cppforc.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/c-for-c-programmers.pdf"
     },
     {
@@ -151,8 +151,8 @@
         "book",
         "books"
       ],
-      "description": "David Conger, Ron Little",
-      "image_url": "/images/games.png",
+      "description": "by David Conger, Ron Little",
+      "image_url": "http://localhost:5000/images/games.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/06/0735714347_Creating_Games_in_C-_A_Step-by-Step_Guide.pdf"
     },
     {
@@ -165,8 +165,8 @@
         "book",
         "books"
       ],
-      "description": "Steve Oualline",
-      "image_url": "/images/cpp_hackers.png",
+      "description": "by Steve Oualline",
+      "image_url": "http://localhost:5000/images/cpp_hackers.png",
       "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/hack.pdf"
     }
   ]
