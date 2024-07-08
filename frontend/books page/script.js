@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayBooks(books) {
-        booksContainer.innerHTML = ''; // Clear previous results
+        booksContainer.innerHTML = ''; 
         if (books.length === 0) {
             booksContainer.innerHTML = '<div class="col-12"><p>No books found.</p></div>';
         } else {

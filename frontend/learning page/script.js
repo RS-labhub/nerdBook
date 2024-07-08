@@ -1,20 +1,15 @@
-async function fetchContent() {
-    const response = await fetch('https://api.mindsdb.com/sql/query', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer YOUR_MINDSDB_API_KEY' // Replace with your MindsDB API key
-        },
-        body: JSON.stringify({
-            query: 'SELECT * FROM ai_library.learning_content;'
-        })
+document.addEventListener('DOMContentLoaded', async () => {
+    const searchBar = document.getElementById('search-bar');
+    const booksContainer = document.getElementById('content-container');
+
+    searchBar.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            const query = searchBar.value.trim();
+            fetchBooks(query);
+        }
     });
 
-    const data = await response.json();
-    return data.data;
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
     const content = await fetchContent();
     const contentContainer = document.getElementById('content-container');
 

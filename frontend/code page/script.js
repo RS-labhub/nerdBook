@@ -16,7 +16,7 @@ document.getElementById('theme-selector').addEventListener('change', function ()
 
 document.getElementById("run-code").addEventListener("click", async (event) => {
   event.preventDefault();
-  // event.stopImmediatePropagation();
+  event.stopImmediatePropagation();
   const code = editor.getValue();
   const outputElement = document.getElementById("output");
   const debugSuggestionsElement = document.getElementById("debug-suggestions");
