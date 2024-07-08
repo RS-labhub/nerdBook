@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const searchBar = document.getElementById('search-bar');
     const booksContainer = document.getElementById('content-container');
 
-    searchBar.addEventListener('keypress', function(event) {
+    searchBar.addEventListener('keypress', function (event) {
         if (event.key === 'Enter') {
             event.preventDefault();
             const query = searchBar.value.trim();
@@ -10,37 +10,41 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    const content = await fetchContent();
-    const contentContainer = document.getElementById('content-container');
+    async function getCodingResponse() {
+        const query = document.getElementById('search-input').value;
 
-    function displayContent(filteredContent) {
-        contentContainer.innerHTML = '';
-        filteredContent.forEach(item => {
-            const contentCard = document.createElement('div');
-            contentCard.classList.add('col-md-4');
-            contentCard.innerHTML = `
-                <div class="card mb-4">
-                    <img src="${item.image}" class="card-img-top" alt="${item.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text">${item.description}</p>
-                        <a href="${item.video_link}" class="btn btn-primary" target="_blank">Watch Video</a>
-                        <a href="${item.notes_link}" class="btn btn-secondary" target="_blank">Read Notes</a>
-                    </div>
-                </div>
-            `;
-            contentContainer.appendChild(contentCard);
+        const response = await fetch('http://localhost:47334/api/sql/query', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer API_KEY'
+            },
+            body: JSON.stringify({
+                "query": `SELECT explanation, key_points, code_examples, conclusion FROM coding_gpt WHERE query = '${query}'`
+            })
         });
+
+        const data = await response.json();
+        displayResponse(data);
     }
 
-    displayContent(content);
+    function displayResponse(data) {
+        const container = document.getElementById('content-container');
+        const response = data[0].query_response;
 
-    document.getElementById('search-input').addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const filteredContent = content.filter(item => 
-            item.title.toLowerCase().includes(searchTerm) || 
-            item.description.toLowerCase().includes(searchTerm)
-        );
-        displayContent(filteredContent);
-    });
-});
+        container.innerHTML = `
+            <div class="col-12">
+                <h2>Explanation</h2>
+                <p>${response.explanation}</p>
+                <h2>Key Points</h2>
+                <ul>
+                    ${response.key_points.split(',').map(point => `<li>${point}</li>`).join('')}
+                </ul>
+                <h2>Code Examples</h2>
+                <pre>${response.code_examples}</pre>
+                <h2>Conclusion</h2>
+                <p>${response.conclusion}</p>
+            </div>
+        `;
+    }
+})
