@@ -1,0 +1,172 @@
+[
+    {
+      "title": "Fundamentals of Programming C++",
+      "aliases": [
+        "Programming Fundamentals with C++",
+        "C++ Basics by Richard L. Halterman",
+        "Intro to C++ Programming",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "by Richard L. Halterman",
+      "image_url": "/images/fundamentals.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/progcpp.pdf"
+    },
+    {
+      "title": "C++ Annotations",
+      "aliases": [
+        "C++ Guide by Frank B. Brokken",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Frank B. Brokken",
+      "image_url": "/images/cpp_anno.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/cplusplus.pdf"
+    },
+    {
+      "title": "Optimizing Software in C++",
+      "aliases": [
+        "C++ Optimization by Agner Fog",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Agner Fog",
+      "image_url": "/images/optimizing.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/optimizing_cpp.pdf"
+    },
+    {
+      "title": "Programming Abstractions in C++",
+      "aliases": [
+        "C++ Abstractions by Eric S. Roberts",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Eric S. Roberts",
+      "image_url": "/images/abstractions.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/Prog-in-Cpp.pdf"
+    },
+    {
+      "title": "Data Structures and Algorithm Analysis in C++, 3rd Edition",
+      "aliases": [
+        "C++ Data Structures by Clifford A. Shaffer",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Clifford A. Shaffer",
+      "image_url": "/images/dsa.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/C-3e20120102.pdf"
+    },
+    {
+      "title": "Structured Programming with C++",
+      "aliases": [
+        "C++ Structured Programming by Kjell Bäckman",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Kjell Bäckman",
+      "image_url": "/images/structured.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/structured-programming-with-c-plus-plus.pdf"
+    },
+    {
+      "title": "The Boost C++ Libraries",
+      "aliases": [
+        "Boost C++ by Boris Schaling",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Boris Schaling",
+      "image_url": "/images/boost.png",
+      "pdf_url": "https://theboostcpplibraries.com/"
+    },
+    {
+      "title": "The Rook's Guide to C++",
+      "aliases": [
+        "C++ Guide by Jeremy A. Hansen",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Jeremy A. Hansen",
+      "image_url": "/images/rook_guide.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/rooks-guide-isbn-version.pdf"
+    },
+    {
+      "title": "How to Make a Computer Operating System using C/C++",
+      "aliases": [
+        "C++ OS Development by Samy Pesse",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Samy Pesse",
+      "image_url": "/images/os_scratch.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/how-to-create-an-operating-system.pdf"
+    },
+    {
+      "title": "C++ For C Programmers",
+      "aliases": [
+        "C++ for C Programmers by JT Kalnay",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "JT Kalnay",
+      "image_url": "/images/cppforc.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/c-for-c-programmers.pdf"
+    },
+    {
+      "title": "Creating Games in C++: A Step-by-Step Guide",
+      "aliases": [
+        "C++ Game Development by David Conger, Ron Little",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "David Conger, Ron Little",
+      "image_url": "/images/games.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/06/0735714347_Creating_Games_in_C-_A_Step-by-Step_Guide.pdf"
+    },
+    {
+      "title": "The C++ Hackers Guide",
+      "aliases": [
+        "C++ Hacking by Steve Oualline",
+        "cpp",
+        "c++",
+        "cpp book",
+        "book",
+        "books"
+      ],
+      "description": "Steve Oualline",
+      "image_url": "/images/cpp_hackers.png",
+      "pdf_url": "https://tfetimes.com/wp-content/uploads/2015/04/hack.pdf"
+    }
+  ]
