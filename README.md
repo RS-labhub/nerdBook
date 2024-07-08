@@ -32,11 +32,15 @@
 
 #  :movie_camera: Demo
 - After a brief introduction, let's dive a little more inside the project.
-- Here is the walk-through of **nerdBOOK**. If you want to witness a more a hd version, [click here]()
+- Here is the walk-through of **nerdBOOK**. If you want to witness a more a hd version, [click here](frontend/assets/nerdBOOK.mp4)
 
 
+[![nerdBOOK](frontend/assets/thumbnail.png)](https://youtu.be/k1GZJ0RcMX4)
 
 <p align="center">Video Demonstration</p>
+
+> [!TIP]
+> Unable to play? Watch here: https://youtu.be/k1GZJ0RcMX4
 
 ## Screenshots
 
@@ -58,7 +62,7 @@
   <br>
   <p align="center">
   <img src="frontend/assets/code.png"  />
-  <p align="center">nerBOOk CPP Playground 🛝</p>
+  <p align="center">nerdBOOk CPP Playground 🛝</p>
 </p>
 
 <br>
