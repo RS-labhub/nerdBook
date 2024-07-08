@@ -27,6 +27,11 @@ app.get('/api/books', (req, res) => {
   });
 });
 
+// Handle root endpoint
+app.get('/', (req, res) => {
+  res.send('This is running smoothly :p');
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
