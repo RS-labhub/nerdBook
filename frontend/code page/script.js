@@ -27,7 +27,7 @@ document.getElementById("run-code").addEventListener("click", async (event) => {
 
   //Validate code
   if (!code.trim() || !/.*int\s+main\s*\(.*\).*/.test(code)) {
-    outputElement.textContent = "😑 Can't find code. Note you must have int main() present in your code";
+    outputElement.textContent = " Can't find code 😑. Note you must have int main() present in your code";
     return;
   }
 
@@ -55,4 +55,55 @@ document.getElementById("run-code").addEventListener("click", async (event) => {
     outputElement.textContent = 'Error running code. Please try again later.';
   }
   return false;
+});
+
+
+// Chatbot
+document.addEventListener('DOMContentLoaded', function() {
+  const chatContainer = document.getElementById('chat-container');
+  const chatHeader = document.getElementById('chat-header');
+  const userInput = document.getElementById('user-input');
+  const sendButton = document.getElementById('send-button');
+  const chatLog = document.getElementById('chat-log');
+
+  chatHeader.addEventListener('click', function() {
+      chatContainer.classList.toggle('expanded');
+  });
+
+  function addMessage(content, className) {
+      const message = document.createElement('div');
+      message.className = 'message ' + className;
+      message.innerText = content;
+      chatLog.appendChild(message);
+      chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  function getBotResponse(userMessage) {
+      // Simple bot response logic
+      const responses = {
+          'hello': 'Hi there!',
+          'how are you': 'I am just a bot, but I am doing well!',
+          'what is your name': 'I am a simple chatbot.',
+          'bye': 'Goodbye!'
+      };
+
+      return responses[userMessage.toLowerCase()] || "I don't understand that.";
+  }
+
+  sendButton.addEventListener('click', function() {
+      const userMessage = userInput.value;
+      if (userMessage.trim()) {
+          addMessage(userMessage, 'user-message');
+          userInput.value = '';
+
+          const botResponse = getBotResponse(userMessage);
+          setTimeout(() => addMessage(botResponse, 'bot-message'), 500);
+      }
+  });
+
+  userInput.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+          sendButton.click();
+      }
+  });
 });
