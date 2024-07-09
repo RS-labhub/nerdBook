@@ -1,9 +1,9 @@
 <p align="center">
     <img src="frontend/assets/logo.png" />
+</p>
+<p align="center">
     <img src="frontend/assets/logo_icon.svg" width="400px"/>
 </p>
-
-
 
 <br>
 
@@ -16,6 +16,7 @@
 - **Free CPP BOOKs** 📖: nerdBOOK will provides with different cpp books from OS building to Games development using CPP 🧑‍💻.
 - **Learning Assistant** ✒️: Unable to understand a topic? Or want to revise with key points of the specific topics?? We made a learning assitant powered by *Minds DB* 🧠.
 - **CPP Playground** 🚀: Learnt everything? Now it's time to test your skills! Go and play with codes in the playground. Getting bugs? Don't worry AI will tell you the debug suggestions 🥹
+- **Radhika(Radha) Code Helper Chatbot** 🤖: Facing trouble in writing codes when on playground?? Use Radha's Code Helper Chatbot. She will assist you with approach and provides you to the code. 💘
 
 #
 
@@ -35,12 +36,14 @@
 - Here is the walk-through of **nerdBOOK**. If you want to witness a more a hd version, [click here](frontend/assets/nerdBOOK.mp4)
 
 
-[![nerdBOOK](frontend/assets/thumbnail.png)](https://youtu.be/k1GZJ0RcMX4)
+[![nerdBOOK](frontend/assets/thumbnail.png)](https://youtu.be/qexMcguP0vM)
 
 <p align="center">Video Demonstration</p>
 
 > [!TIP]
-> Unable to play? Watch here: https://youtu.be/k1GZJ0RcMX4
+> Unable to play? Watch here: https://youtu.be/qexMcguP0vM
+
+<br>
 
 ## Screenshots
 
@@ -80,7 +83,6 @@
 
 ##  :outbox_tray: Installation Guide
 - These are the steps required to install and run the nerdBOOK project:
-
 
 1. Clone the Repository: Open a terminal or command prompt and clone the nerdBOOK repository from GitHub using the following command:
 
